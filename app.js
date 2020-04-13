@@ -1,11 +1,12 @@
 const request = require('request')
+const api = require('./util/constants')
 
-const url = 'http://api.openweathermap.org/data/2.5/weather?q=Mexico&units=metric&appid=6c9e958f6df5e873ccf34552a200e988'
+const url = api.API_CURRENT_WEATHER + "&query=37.8267,-122.4233"
 
-request({ url: url }, (error, response) => {
+request({ url: url, json: true }, (error, response) => {
 
-    const data = JSON.parse(response.body)
-
-    console.log(data)
+    console.log(response.body)
 
 })
+
+//Geocoding
