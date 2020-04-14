@@ -9,4 +9,10 @@ request({ url: url, json: true }, (error, response) => {
 
 })
 
+request({ url: api.API_MAPBOX_GEO, json: true }, (error, response) => {
+
+    console.log(response.body)
+
+})
+
 //Geocoding
