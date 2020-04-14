@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jelias777/weather-app#readme",
   "dependencies": {
+    "properties-file": "^1.0.0",
     "request": "^2.88.2"
   }
 }
