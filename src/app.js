@@ -4,8 +4,29 @@ const express = require('express')
 const app = express()
 const publicDirectoryPath = express.static(path.join(__dirname, '../public'))
 
+//Add hbs(handlebars) to express
+app.set('view engine', 'hbs')
 //express.static function that takes the path of the folder we want to set
 app.use(publicDirectoryPath)
+
+app.get('', (req,res) => {
+    res.render('index',{
+        title: 'Weather App',
+        name: "Jorge Elias"
+    })
+})
+
+app.get('/about', (req,res) => {
+    res.render('about',{
+        name: "Jorge Elias"
+    })
+})
+
+app.get('/help', (req,res) => {
+    res.render('help',{
+        helpText: "This is some helpful text."
+    })
+})
 
 app.get('/weather', (req, res) => {
     res.send('<h1> Weather </h1>')
