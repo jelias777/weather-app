@@ -21,14 +21,14 @@ app.use(publicDirectoryPath)
 
 app.get('', (req,res) => {
     res.render('index',{
-        title: 'Weather App',
+        title: 'Weather',
         name: "Jorge Elias"
     })
 })
 
-app.get('/about', (req,res) => {
-    res.render('about',{
-        title: "About Me",
+app.get('/search', (req,res) => {
+    res.render('search',{
+        title: "Search",
         name: "Jorge Elias"
     })
 })
