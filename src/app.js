@@ -3,10 +3,15 @@ const express = require('express')
 
 const app = express()
 const publicDirectoryPath = express.static(path.join(__dirname, '../public'))
+const viewPath = path.join(__dirname, '../templates')
 
 //Add hbs(handlebars) to express
 app.set('view engine', 'hbs')
-//express.static function that takes the path of the folder we want to set
+
+//set the path of views(templates)
+app.set('views', viewPath)
+
+//express.static function that takes the path of the folder we want to set as public
 app.use(publicDirectoryPath)
 
 app.get('', (req,res) => {
@@ -33,5 +38,5 @@ app.get('/weather', (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+    console.log('Server is running on port 3000')
 })
