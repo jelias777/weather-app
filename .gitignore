@@ -1,2 +1,5 @@
-# dependencies
+# node modules dependencies
 /node_modules
+
+# properties file
+app.properties

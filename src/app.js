@@ -1,6 +1,7 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+const prop = require('./util/properties')
 
 const app = express()
 const publicDirectoryPath = express.static(path.join(__dirname, '../public'))
@@ -84,6 +85,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000')
+app.listen(prop.PORT, () => {
+    console.log('Server is running on port ' + prop.PORT)
 })
