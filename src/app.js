@@ -1,13 +1,17 @@
+const path = require('path')
 const express = require('express')
 
 const app = express()
+const publicDirectoryPath = express.static(path.join(__dirname, '../public'))
 
-app.get('', (req, res) => {
-    res.send('Hello express!')
-})
+//express.static function that takes the path of the folder we want to set
+app.use(publicDirectoryPath)
 
 app.get('/help', (req, res) => {
-    res.send('Help page')
+    res.send({
+        name: 'Jorge',
+        age: 26
+    })
 })
 
 app.get('/about', (req, res) => {
@@ -15,7 +19,7 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    res.send('Weather')
+    res.send('<h1> Weather </h1>')
 })
 
 app.listen(3000, () => {
