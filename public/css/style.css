@@ -2,10 +2,78 @@ html, body {
     width: 100%;
     padding: 0;
     margin: 0;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    letter-spacing: 2px;
+    word-spacing: 2px;
 }
 
-h1 {
+.notFound {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: url(/img/404.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.notFound .content {
+    position: relative;
+    margin: 0 auto;
+    background-color: rgba(3, 3, 3, 0.5);
+    padding-bottom: 2em;
+}
+
+.notFound p.title {
+    color: #fff;
+    font-size: 8rem;
+    padding-top: 1rem;
+    margin-bottom: -3rem;
+}
+
+.notFound p.subtitle {
+    color: #fff;
+    line-height: 5rem;
+    font-size: 2rem;
+}
+
+.notFound a {
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.notFound a:hover {
     color: #333;
+    background-color: #fff;    
+}
+
+@media screen and (min-width: 701px) {
+   
+    .notFound .content {
+        width: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+
+    .notFound .content {
+        width: 90%;
+    }
+
 }
 
 .footer {
