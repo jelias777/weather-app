@@ -2,6 +2,8 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const prop = require('./util/properties')
+const geocode = require('./util/geocode')
+const forecast = require('./util/forecast')
 
 const app = express()
 const publicDirectoryPath = express.static(path.join(__dirname, '../public'))
@@ -48,22 +50,46 @@ app.get('/weather', (req, res) => {
             error: 'You must provide an address'
         })
     }
-    res.send({
-        address: req.query.address
+    
+    geocode(req.query.address, (error, {latitude, longitude, location}) => {
+
+        if (error) {
+            return res.send({ error })
+        }
+    
+        forecast.forecast( latitude, longitude, (error, forecastData) => {
+    
+            if (error) {
+                return res.send({ error })
+            }
+    
+            res.send({
+                forecast: forecastData,
+                location,
+                address: req.query.address
+            })
+        })
     })
 })
 
-app.get('/products', (req, res) => {
-
-    if(!req.query.search) {
+app.get('/weather/location', (req, res) => {
+    if(!req.query.latitude || !req.query.longitude) {
         return res.send({
-            error: 'You must provide a search term'
+            error: 'You must provide a latitude and longitude'
         })
     }
-
-    console.log(req.query)
-    res.send({
-        products: []
+    
+    forecast.location( req.query.latitude, req.query.longitude, (error, forecastData) => {
+    
+        if (error) {
+            return res.send({ error })
+        }
+    
+        res.send({
+            body,
+            latitude: req.query.latitude,
+            longitude: req.query.longitude
+        })
     })
 })
 
