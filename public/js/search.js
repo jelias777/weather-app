@@ -32,9 +32,11 @@ weatherForm.addEventListener('click', (e) => {
         if(data.error) {
             alert(data.error)
         } else {
+            document.getElementById("degrees").style.visibility = "visible"
+
             image.src = data.body.current.weather_icons[0]
             degrees.textContent = data.body.current.temperature
-            city.textContent = "City: " + data.location
+            city.textContent = data.location
             humidity.textContent = 'Humidity: ' + data.body.current.humidity + '%'
             wind.textContent = 'Wind: ' + data.body.current.wind_speed + ' km/h'
             forecast.textContent = data.body.current.weather_descriptions[0] + '. It is currently ' + data.body.current.temperature  + ' degress out. There is a ' + data.body.current.precip + '% chance of rain.'
