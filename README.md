@@ -14,6 +14,7 @@ Example of an asynchronous node.js application, use of handlebars and express
 - properties-reader 2.0.0
 - properties-file 1.0.0
 - request 2.88.2
+- nodemon 2.0.3
 
 ## Building
 
