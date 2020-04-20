@@ -125,7 +125,7 @@ html, body {
     margin-right: 16px;
 }
 
-/**********  SEARCH FORM */
+/**********  SEARCH FORM **********/
 
 input[type=text] {
     padding: 12px 20px;
@@ -148,3 +148,6 @@ button:hover {
     color: #fff;
     background-color: #888;
 }
+
+/**********  Weather **********/
+
