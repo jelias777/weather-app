@@ -29,7 +29,7 @@ const location = (latitude, longitude, callback) => {
         } else if(body.error) {
             callback('Unable to find location!')
         } else {
-            callback(undefined, response.body)
+            callback(undefined, body)
         }
 
     })
