@@ -124,3 +124,27 @@ html, body {
     float: right;
     margin-right: 16px;
 }
+
+/**********  SEARCH FORM */
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 1.2em;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-size: 1.2em;
+    background-color: #fff;
+    border: 2px solid #888;
+    color: #888;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #888;
+}
