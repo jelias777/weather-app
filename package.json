@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joelias71/weather-app.git"
+    "url": "git+https://github.com/joelias71/async-node-express-hbs.git"
   },
   "author": "Jorge Elias",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joelias71/weather-app/issues"
+    "url": "https://github.com/joelias71/async-node-express-hbs/issues"
   },
-  "homepage": "https://github.com/joelias71/weather-app#readme"
+  "homepage": "https://github.com/joelias71/async-node-express-hbs#readme"
 }
