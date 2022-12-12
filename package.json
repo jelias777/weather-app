@@ -4,7 +4,7 @@
   "description": "web server weather app with node.js",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "hbs": "^4.1.1",
     "properties-file": "^1.0.0",
     "properties-reader": "^2.0.0",
